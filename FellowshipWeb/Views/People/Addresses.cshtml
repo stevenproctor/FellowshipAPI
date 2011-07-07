@@ -4,47 +4,13 @@
 	ViewBag.Title = "Addresses";
 }
 
-<h2>Addresses</h2>
+<h2>@ViewBag.Title</h2>
 
 @Html.ValidationSummary()
 
 @if (Model != null)
 {
-<table>
-	<thead>
-		<tr>
-			<th>Address Type</th>
-			<th>Address</th>
-			<th>City</th>
-			<th>County/Parish</th>
-			<th>State/Provence</th>
-			<th>Country</th>
-		</tr>
-	</thead>
-	<tbody>
-@foreach (var item in Model)
-{
-		<tr class="linkable"  onclick="window.document.location = '@Url.Action("Details", "Address", new { id = item.Id })'" >
-			<td>
-				@item.AddressType
-			</td>
-			<td>
-				@item.Address1
-			</td>
-			<td>
-				@item.City
-			</td>
-			<td>
-				@item.County
-			</td>
-			<td>
-				@item.StateOrProvence
-			</td>
-			<td>
-				@item.Country
-			</td>
-		</tr>
-}
-	</tbody>
-</table>
+	<div>
+	@Html.Partial("AddressesListing")
+	</div>
 }

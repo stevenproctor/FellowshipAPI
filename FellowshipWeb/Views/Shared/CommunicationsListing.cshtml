@@ -1,0 +1,31 @@
+﻿@model IEnumerable<FellowshipLib.Communication>
+
+<table>
+	<thead>
+		<tr>
+			<th>Type</th>
+			<th>Value</th>
+			<th>Is Listed</th>
+			<th>Last Updated</th>
+		</tr>
+	</thead>
+	<tbody>
+@foreach (var item in Model)
+{
+		<tr>
+			<td>
+				@( item.CommunicationType != null ? item.CommunicationType.Name : string.Empty)
+			</td>
+			<td>
+				@item.CommunicationValue
+			</td>
+			<td>
+				@item.Listed
+			</td>
+			<td>
+				@item.LastUpdatedDate
+			</td>
+		</tr>
+}
+	</tbody>
+</table>
