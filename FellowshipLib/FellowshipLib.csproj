@@ -63,15 +63,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Address.cs" />
-    <Compile Include="Addresses.cs" />
     <Compile Include="AddressLookupByPerson.cs" />
     <Compile Include="AddressLookupByPersonTests.cs" />
+    <Compile Include="DataTransferClasses\Address.cs" />
+    <Compile Include="DataTransferClasses\Addresses.cs" />
+    <Compile Include="DataTransferClasses\Occupation.cs" />
+    <Compile Include="DataTransferClasses\Person.cs" />
     <Compile Include="Extensions\HttpStatusCodeExtensions.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="HouseholdLookup.cs" />
     <Compile Include="HouseholdLookupTests.cs" />
-    <Compile Include="Occupation.cs" />
     <Compile Include="PersonLookup.cs" />
     <Compile Include="PersonLookupTests.cs" />
     <Compile Include="PersonSearch.cs" />
@@ -79,7 +80,6 @@
     <Compile Include="SafeTrimTests.cs" />
     <Compile Include="FellowshipAPI.cs" />
     <Compile Include="GetRequest.cs" />
-    <Compile Include="Person.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
