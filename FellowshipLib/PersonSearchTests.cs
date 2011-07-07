@@ -43,6 +43,20 @@ namespace FellowshipLib
 
 		[Test]
 		[Category("IntegrationTest")]
+		public void WhenSearchingForAPerson_WithANameThatDoesntExists_ItShouldNotBeNull()
+		{
+			var query = new PersonSearch(Guid.NewGuid().ToString());
+			query.Find();
+			var people = query.Result();
+
+			people.Should().NotBeNull();
+			people.PageNumber.Should().Be(0, "PageNumber");
+			people.AdditionalPages.Should().BeGreaterOrEqualTo(0, "AdditionalPages");
+			people.Count.Should().Be(0);
+		}
+
+		[Test]
+		[Category("IntegrationTest")]
 		public void WhenSearchingForAPerson_AndAPageNumberIsSpecified_ItShouldReturnTheResultsForThatPage()
 		{
 			var query = new PersonSearch("%").AtPage(100);

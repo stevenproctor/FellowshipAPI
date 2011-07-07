@@ -35,7 +35,7 @@ namespace FellowshipLib
 			else
 			{
 				Succeeded = true;
-				resultSet = response.Data;
+				resultSet = response.Data != null ? response.Data : new T();
 			}
 		}
 

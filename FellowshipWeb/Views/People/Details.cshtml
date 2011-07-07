@@ -6,6 +6,10 @@
 
 <h2>Details</h2>
 
+@Html.ValidationSummary()
+
+@if (Model != null)
+{
 <fieldset>
 	<legend>@Model.Prefix @Model.FirstName @Model.MiddleName @Model.LastName @Model.Suffix</legend>
 	<div class="display-label">Goes By</div>
@@ -19,4 +23,4 @@
 	View @Html.ActionLink("Household", "Details", "Household", new { id = Model.HouseholdID }, new { }) |
 	@Html.ActionLink("Addresses", "Addresses", "People", new { id = Model.Id }, new { })
 </fieldset>
-
+}
