@@ -1,3 +1,10 @@
+/*
+ Go to http://colorlab.wickline.org/colorblind/colorlab for colors for the colorblind
+to find out what the site will look like in production go to their site which will fetch
+you page and render it as a colorblind person would see it.  That page is located at:
+http://colorfilter.wickline.org
+*/
+
 body
 {
 	font-size: 75%;

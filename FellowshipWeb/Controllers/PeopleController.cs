@@ -36,6 +36,12 @@ namespace FellowshipWeb.Controllers
 		{
 			var lookup = new AddressLookupByPerson(id);
 			lookup.Find();
+			if (!lookup.Succeeded())
+			{
+				ModelState.AddModelError("error", lookup.GetMessages());
+				return View();
+			}
+
 			var addresses = lookup.Result();
 			return View(addresses);
 		}

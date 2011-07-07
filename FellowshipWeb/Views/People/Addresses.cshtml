@@ -5,6 +5,11 @@
 }
 
 <h2>Addresses</h2>
+
+@Html.ValidationSummary()
+
+@if (Model != null)
+{
 <table>
 	<thead>
 		<tr>
@@ -42,3 +47,4 @@
 }
 	</tbody>
 </table>
+}
