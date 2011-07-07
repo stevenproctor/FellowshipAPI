@@ -4,6 +4,7 @@
 <table>
 	<thead>
 		<tr>
+			<th>Status</th>
 			<th>Last Name</th>
 			<th>First Name</th>
 			<th>Middle Name</th>
@@ -13,6 +14,9 @@
 @foreach (var item in Model)
 {
 		<tr class="linkable"  onclick="window.document.location = '@Url.Action("Details", "People", new { id = item.Id })'" >
+			<td>
+				@(item.Status != null ? item.Status.Name : string.Empty)
+			</td>
 			<td>
 				@item.LastName
 			</td>
