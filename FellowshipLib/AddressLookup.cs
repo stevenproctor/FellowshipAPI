@@ -17,11 +17,6 @@ namespace FellowshipLib
 			this.personId = personId;
 		}
 
-		public void Find()
-		{
-			Get();
-		}
-
 		protected override void AddParameters(RestRequest request)
 		{
 			request.AddParameter(PersonIdParameter, personId, ParameterType.UrlSegment);

@@ -18,11 +18,6 @@ namespace FellowshipLib
 			this.householdId = householdId;
 		}
 
-		public void FindHousehold()
-		{
-			Get();
-		}
-
 		protected override void AddParameters(RestRequest request)
 		{
 			request.AddParameter(HouseholdIdParameter, householdId, ParameterType.UrlSegment);

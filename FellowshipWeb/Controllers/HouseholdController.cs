@@ -12,7 +12,7 @@ namespace FellowshipWeb.Controllers
 		public ActionResult Details(string id)
 		{
 			var lookup = new HouseholdLookup(id);
-			lookup.FindHousehold();
+			lookup.Find();
 			var household = lookup.Result();
 			return View(household);
 		}

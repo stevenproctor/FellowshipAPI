@@ -18,6 +18,11 @@ namespace FellowshipLib
 		public string SearchName { get; set; }
 	}
 
+	public class Status
+	{
+		public string Name { get; set; }
+	}
+
 	public class Person
 	{
 		public string Id { get; set; }

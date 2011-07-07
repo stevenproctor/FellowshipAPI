@@ -33,9 +33,10 @@ namespace FellowshipLib
 			return name.PadLeft(MinimumNameParameterLength, '%');
 		}
 
-		public void Search()
+		public override void Find()
 		{
-			Get();
+			base.Find();
+
 			if (Succeeded())
 			{
 				Result().SearchName = specifiedName;

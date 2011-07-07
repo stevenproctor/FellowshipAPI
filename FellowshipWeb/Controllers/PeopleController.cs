@@ -18,32 +18,34 @@ namespace FellowshipWeb.Controllers
 			if (maxPageNumber != -1 && pageNumber > maxPageNumber)
 				pageNumber = maxPageNumber;
 
-			var query = new PersonSearch(name).AtPage(pageNumber);
-			query.Search();
-			var results = query.Result();
-			return View(results);
+			var getRequest = new PersonSearch(name).AtPage(pageNumber);
+			return GetActionResult(getRequest);
 		}
 
 		public ActionResult Details(string id)
 		{
-			var lookup = new PersonLookup(id);
-			lookup.FindPerson();
-			Person p = lookup.Result();
-			return View(p);
+			var getRequest = new PersonLookup(id);
+			return GetActionResult(getRequest);
 		}
 
 		public ActionResult Addresses(string id)
 		{
-			var lookup = new AddressLookupByPerson(id);
-			lookup.Find();
-			if (!lookup.Succeeded())
+			var getRequest = new AddressLookupByPerson(id);
+			return GetActionResult(getRequest);
+		}
+
+		private ActionResult GetActionResult<T>(GetRequest<T> getRequest) where T : new()
+		{
+			getRequest.Find();
+
+			if (!getRequest.Succeeded())
 			{
-				ModelState.AddModelError("error", lookup.GetMessages());
+				ModelState.AddModelError("error", getRequest.GetMessages());
 				return View();
 			}
 
-			var addresses = lookup.Result();
-			return View(addresses);
+			return View(getRequest.Result());
+
 		}
 	}
 }

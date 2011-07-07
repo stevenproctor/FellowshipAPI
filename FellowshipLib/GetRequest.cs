@@ -12,6 +12,11 @@ namespace FellowshipLib
 		private bool succeeded;
 		private string messages;
 
+		public virtual void Find()
+		{
+			Get();
+		}
+
 		protected void Get()
 		{
 			var request = new RestRequest(Method.GET);

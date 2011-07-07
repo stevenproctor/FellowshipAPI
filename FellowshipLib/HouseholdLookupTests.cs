@@ -16,7 +16,7 @@ namespace FellowshipLib
 		{
 			string householdId = "7320143";
 			var lookup = new HouseholdLookup(householdId);
-			lookup.FindHousehold();
+			lookup.Find();
 			People people = lookup.Result();
 
 			people.Should().NotBeNull();

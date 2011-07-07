@@ -15,7 +15,7 @@ namespace FellowshipLib
 		public void WhenSearchingForAPerson_WithANameOfA_ItShouldReturnAPeopleSearchResults()
 		{
 			var query = new PersonSearch("A");
-			query.Search();
+			query.Find();
 			var people = query.Result();
 
 			people.Should().NotBeNull();
@@ -31,7 +31,7 @@ namespace FellowshipLib
 		public void WhenSearchingForAPerson_WithANameOfMeyer_ItShouldReturnAPeopleSearchResults()
 		{
 			var query = new PersonSearch("Meyer");
-			query.Search();
+			query.Find();
 			var people = query.Result();
 
 			people.Should().NotBeNull();
@@ -46,7 +46,7 @@ namespace FellowshipLib
 		public void WhenSearchingForAPerson_AndAPageNumberIsSpecified_ItShouldReturnTheResultsForThatPage()
 		{
 			var query = new PersonSearch("%").AtPage(100);
-			query.Search();
+			query.Find();
 			var people = query.Result();
 
 			people.Should().NotBeNull();
@@ -58,7 +58,7 @@ namespace FellowshipLib
 		public void WhenSearchingForAPerson_AndAPageNumberLargerThanTheTotalPagesIsSpecified_ItShouldReturnNoResultsForThatPage()
 		{
 			var query = new PersonSearch("%").AtPage(int.MaxValue);
-			query.Search();
+			query.Find();
 			query.Succeeded().Should().BeFalse();
 		}
 
@@ -67,7 +67,7 @@ namespace FellowshipLib
 		public void WhenSearchingForAPerson_WithANameOfTwoSpaces()
 		{
 			var query = new PersonSearch("  ").AtPage(int.MaxValue);
-			query.Search();
+			query.Find();
 			query.Succeeded().Should().BeFalse();
 		}
 
@@ -76,7 +76,7 @@ namespace FellowshipLib
 		public void WhenSearchingForAPerson_WithNoNameSpecified_ItShouldBeTheSameAsAWildcardSearch()
 		{
 			var query = new PersonSearch(string.Empty);
-			query.Search();
+			query.Find();
 			var people = query.Result();
 			people.Should().NotBeEmpty();
 		}

@@ -15,7 +15,7 @@ namespace FellowshipLib
 		public void WhenSearchingForAUserByAValidId_TheUserShouldNotBeNull()
 		{
 			var lookup = new PersonLookup("18970886");
-			lookup.FindPerson();
+			lookup.Find();
 			var person = lookup.Result();
 			person.Should().NotBeNull();
 		}
@@ -25,7 +25,7 @@ namespace FellowshipLib
 		public void WhenSearchingForAUserByAnInvalidId_TheUserShouldNotBeNull()
 		{
 			var lookup = new PersonLookup("0123456789");
-			lookup.FindPerson();
+			lookup.Find();
 			lookup.Succeeded().Should().BeFalse();
 		}
 	}
