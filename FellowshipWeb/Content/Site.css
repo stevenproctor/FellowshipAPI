@@ -82,12 +82,21 @@ textarea
 	cursor: pointer;
 }
 
+.linkable:hover
+{
+	background-color: #FC9;
+}
+
 .alternate-row
 {
-	background-color: #ECECEC;
+	background-color: #CCC;
 }
 
 table
 {
 	border-collapse: collapse;
+}
+td, th
+{
+	padding-right:50px;
 }

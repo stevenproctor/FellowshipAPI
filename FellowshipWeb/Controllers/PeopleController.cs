@@ -34,7 +34,10 @@ namespace FellowshipWeb.Controllers
 
 		public ActionResult Addresses(string id)
 		{
-			return View();
+			var lookup = new AddressLookupByPerson(id);
+			lookup.Find();
+			var addresses = lookup.Result();
+			return View(addresses);
 		}
 	}
 }
