@@ -20,7 +20,10 @@
 	<div class="display-field">@Model.DateOfBirth</div>
 	<div class="display-label">Occupation</div>
 	<div class="display-field">@(Model.Occupation != null ? Model.Occupation.Name : string.Empty)</div>
+	<div class="display-footer">
 	View @Html.ActionLink("Household", "Details", "Household", new { id = Model.HouseholdID }, new { }) |
-	@Html.ActionLink("Addresses", "Addresses", "People", new { id = Model.Id }, new { })
+	@Html.ActionLink("Addresses", "Addresses", "People", new { id = Model.Id }, new { }) |
+	@Html.ActionLink("Communications", "Communications", "People", new { id = Model.Id }, new { })
+	</div>
 </fieldset>
 }

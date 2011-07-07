@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using FellowshipLib;
 using FellowshipLib.Extensions;
+using FellowshipLib.APIRequests.Get;
 
 namespace FellowshipWeb.Controllers
 {
@@ -31,6 +32,12 @@ namespace FellowshipWeb.Controllers
 		public ActionResult Addresses(string id)
 		{
 			var getRequest = new AddressLookupByPerson(id);
+			return GetActionResult(getRequest);
+		}
+
+		public ActionResult Communications(string id)
+		{
+			var getRequest = new CommunicationsLookupByPerson(id);
 			return GetActionResult(getRequest);
 		}
 
