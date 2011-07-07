@@ -64,12 +64,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="APIRequests\Get\AddressLookupByPerson.cs" />
+    <Compile Include="DataTransferClasses\Communications.cs" />
+    <Compile Include="APIRequests\Get\CommunicationsLookupByPerson.cs" />
     <Compile Include="APIRequests\Get\GetRequest.cs" />
     <Compile Include="APIRequests\Get\HouseholdLookup.cs" />
     <Compile Include="APIRequests\Get\PersonLookup.cs" />
     <Compile Include="APIRequests\Get\PersonSearch.cs" />
     <Compile Include="DataTransferClasses\Address.cs" />
     <Compile Include="DataTransferClasses\Addresses.cs" />
+    <Compile Include="DataTransferClasses\CommunicationType.cs" />
     <Compile Include="DataTransferClasses\Occupation.cs" />
     <Compile Include="DataTransferClasses\Person.cs" />
     <Compile Include="Extensions\HttpStatusCodeExtensions.cs" />
@@ -77,6 +80,7 @@
     <Compile Include="FellowshipAPI.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tests\AddressLookupByPersonTests.cs" />
+    <Compile Include="Tests\CommunicationsLookupByPersonTests.cs" />
     <Compile Include="Tests\HouseholdLookupTests.cs" />
     <Compile Include="Tests\PersonLookupTests.cs" />
     <Compile Include="Tests\PersonSearchTests.cs" />
