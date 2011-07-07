@@ -65,7 +65,7 @@
   <ItemGroup>
     <Compile Include="Address.cs" />
     <Compile Include="Addresses.cs" />
-    <Compile Include="AddressLookup.cs" />
+    <Compile Include="AddressLookupByPerson.cs" />
     <Compile Include="AddressLookupByPersonTests.cs" />
     <Compile Include="Extensions\HttpStatusCodeExtensions.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
