@@ -5,7 +5,7 @@ using System.Text;
 using NUnit.Framework;
 using FluentAssertions;
 
-namespace FellowshipLib
+namespace FellowshipLib.Tests
 {
 	[TestFixture]
 	public class PersonLookupTests
@@ -14,7 +14,7 @@ namespace FellowshipLib
 		[Category("IntegrationTests")]
 		public void WhenSearchingForAUserByAValidId_TheUserShouldNotBeNull()
 		{
-			var lookup = new PersonLookup("18970886");
+			var lookup = new PersonLookup(GetRequestTestsHelper.ValidPersonId);
 			lookup.Find();
 			var person = lookup.Result();
 			person.Should().NotBeNull();
@@ -24,7 +24,7 @@ namespace FellowshipLib
 		[Category("IntegrationTests")]
 		public void WhenSearchingForAUserByAnInvalidId_TheUserShouldNotBeNull()
 		{
-			var lookup = new PersonLookup("0123456789");
+			var lookup = new PersonLookup(GetRequestTestsHelper.InValidPersonId);
 			lookup.Find();
 			lookup.Succeeded().Should().BeFalse();
 		}

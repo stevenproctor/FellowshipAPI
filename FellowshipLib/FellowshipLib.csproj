@@ -83,6 +83,7 @@
     <Compile Include="Tests\AddressLookupByPersonTests.cs" />
     <Compile Include="Tests\CommunicationsLookupByPersonTests.cs" />
     <Compile Include="Tests\EditAddressRequestTests.cs" />
+    <Compile Include="Tests\GetRequestTestsHelper.cs" />
     <Compile Include="Tests\HouseholdLookupTests.cs" />
     <Compile Include="Tests\PersonLookupTests.cs" />
     <Compile Include="Tests\PersonSearchTests.cs" />

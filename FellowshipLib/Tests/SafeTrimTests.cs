@@ -4,8 +4,9 @@ using System.Linq;
 using System.Text;
 using NUnit.Framework;
 using FluentAssertions;
+using FellowshipLib.Extensions;
 
-namespace FellowshipLib.Extensions
+namespace FellowshipLib.Tests.Extensions
 {
 	[TestFixture]
 	public class SafeTrimTests

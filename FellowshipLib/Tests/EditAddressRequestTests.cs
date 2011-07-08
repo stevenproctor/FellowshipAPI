@@ -15,9 +15,8 @@ namespace FellowshipLib.Tests
 		[Category("IntegrationTest")]
 		public void WhenCallingEditAddressFor_AValidPerson_AndAValidAddressId_ItShouldReturnThatAddress()
 		{
-			var personId = "18970874";
-			var addressId = "12162767";
-			var editRequest = new EditAddressRequest(personId, addressId);
+			var addressId = GetRequestTestsHelper.ValidAddressId;
+			var editRequest = new EditAddressRequest(GetRequestTestsHelper.ValidPersonId, addressId);
 			editRequest.Find();
 
 			editRequest.Succeeded().Should().BeTrue();
@@ -30,9 +29,8 @@ namespace FellowshipLib.Tests
 		[Category("IntegrationTest")]
 		public void WhenCallingEditAddressFor_AnInvalidPerson_AndAValidAddressId_ItShouldReturnThatAddress()
 		{
-			var personId = "invalidPersonId";
-			var addressId = "12162767";
-			var editRequest = new EditAddressRequest(personId, addressId);
+			var addressId = GetRequestTestsHelper.ValidAddressId;
+			var editRequest = new EditAddressRequest(GetRequestTestsHelper.InValidPersonId, addressId);
 			editRequest.Find();
 
 			editRequest.Succeeded().Should().BeTrue();
@@ -45,9 +43,7 @@ namespace FellowshipLib.Tests
 		[Category("IntegrationTest")]
 		public void WhenCallingEditAddressFor_AnValidPerson_AndAnInvalidAddressId_ItShouldFail()
 		{
-			var personId = "18970874";
-			var addressId = "121627670000";
-			var editRequest = new EditAddressRequest(personId, addressId);
+			var editRequest = new EditAddressRequest(GetRequestTestsHelper.ValidPersonId, GetRequestTestsHelper.InvalidAddressId);
 			editRequest.Find();
 
 			editRequest.Succeeded().Should().BeFalse();

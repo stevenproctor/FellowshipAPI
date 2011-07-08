@@ -5,7 +5,7 @@ using System.Text;
 using NUnit.Framework;
 using FluentAssertions;
 
-namespace FellowshipLib
+namespace FellowshipLib.Tests
 {
 	[TestFixture]
 	public class PersonSearchTests

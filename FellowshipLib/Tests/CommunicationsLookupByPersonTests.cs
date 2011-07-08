@@ -15,7 +15,7 @@ namespace FellowshipLib.Tests
 		[Category("IntegrationTest")]
 		public void WhenSearchingForCommunicationsByAValidUser_TheResultShouldNotBeNull()
 		{
-			var personId = "18970874";
+			var personId = GetRequestTestsHelper.ValidPersonId;
 			var lookup = new CommunicationsLookupByPerson(personId);
 			lookup.Find();
 			lookup.Succeeded().Should().BeTrue();
@@ -26,8 +26,7 @@ namespace FellowshipLib.Tests
 		[Category("IntegrationTest")]
 		public void WhenSearchingForCommunicationsByAnInvalidUser_TheResultShouldBeNull()
 		{
-			var personId = Guid.NewGuid().ToString();
-			var lookup = new CommunicationsLookupByPerson(personId);
+			var lookup = new CommunicationsLookupByPerson(GetRequestTestsHelper.InValidPersonId);
 			lookup.Find();
 			lookup.Succeeded().Should().BeFalse();
 			lookup.Result().Should().BeNull();
