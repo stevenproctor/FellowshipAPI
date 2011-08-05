@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VisualState xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ShowCheckBoxes="false">
+  <TopNode>[0-1000]C:\dev\interviews\fellowshipTech\FellowshipLib\FellowshipLib.csproj</TopNode>
+  <SelectedNode>[0-1002]FellowshipLib.PersonQueryTests.WhenSearchingForAPerson_WithANameOfMeyer_ItShouldReturnAnEnumerationOfPeople</SelectedNode>
+  <ExcludeCategories>false</ExcludeCategories>
+  <Nodes>
+    <Node UniqueName="[0-1000]C:\dev\interviews\fellowshipTech\FellowshipLib\FellowshipLib.csproj" Expanded="true" />
+    <Node UniqueName="[0-1004]C:\dev\interviews\fellowshipTech\FellowshipLib\bin\Debug\FellowshipLib.dll" Expanded="true" />
+    <Node UniqueName="[0-1005]FellowshipLib" Expanded="true" />
+    <Node UniqueName="[0-1001]FellowshipLib.PersonQueryTests" Expanded="true" />
+  </Nodes>
+</VisualState>
