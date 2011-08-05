@@ -10,7 +10,31 @@ using System.Web;
 
 namespace FellowshipLib
 {
-	class PersonQuery
+	abstract class GetRequest<T> where T : new()
+	{
+		internal T Search()
+		{
+			var request = new RestRequest(Method.GET);
+			request.Resource = GetResource() + ".xml";
+			request.RequestFormat = DataFormat.Xml;
+			AddParameters(request);
+			var apiRequest = new FellowshipAPI();
+			return apiRequest.SendRequest<T>(request);
+		}
+
+		private void AddParameters(RestRequest request)
+		{
+			foreach (Parameter parameter in GetParameters())
+			{
+				request.AddParameter(parameter);
+			}
+		}
+
+		protected abstract IEnumerable<Parameter> GetParameters();
+		protected abstract string GetResource();
+	}
+
+	class PersonQuery : GetRequest<People>
 	{
 		private string searchName = string.Empty;
 		private string searchResponse;
@@ -20,15 +44,20 @@ namespace FellowshipLib
 			return this;
 		}
 
-		internal People Search()
+		protected override IEnumerable<Parameter> GetParameters()
 		{
-			string searchParams = "searchFor=" + searchName;
-			var request = new RestRequest(Method.GET);
-			request.Resource = "People/Search.xml";
-			request.RequestFormat = DataFormat.Xml;
-			request.AddParameter("searchFor", searchName, ParameterType.GetOrPost);
-			var apiRequest = new FellowshipAPI();
-			return apiRequest.SendRequest<People>(request);
+			var parameters = new List<Parameter>();
+			var parameter = new Parameter();
+			parameter.Name = "searchFor";
+			parameter.Value = searchName;
+			parameter.Type = ParameterType.GetOrPost;
+			parameters.Add(parameter);
+			return parameters;
+		}
+
+		protected override string GetResource()
+		{
+			return "People/Search";
 		}
 
 		internal string GetResponse()
@@ -40,12 +69,11 @@ namespace FellowshipLib
 	internal class FellowshipAPI
 	{
 		private const string baseUrl = "https://demo.fellowshiponeapi.com/v1/";
-		private string response;
 		public T SendRequest<T>(RestRequest request) where T : new()
 		{
 			var client = new RestClient();
 			client.BaseUrl = baseUrl;
-			client.AddDefaultParameter("mode", "Demo", ParameterType.GetOrPost);
+			AddDefaultParameters(client);
 			
 			var response = client.Execute<T>(request);
 			if (response.Content.StartsWith("400"))
@@ -53,9 +81,9 @@ namespace FellowshipLib
 			return response.Data;
 		}
 
-		public string GetResponse()
+		private static void AddDefaultParameters(RestClient client)
 		{
-			return response;
+			client.AddDefaultParameter("mode", "Demo", ParameterType.GetOrPost);
 		}
 	}
 }
