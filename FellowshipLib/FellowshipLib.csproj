@@ -63,6 +63,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FellowshipAPI.cs" />
+    <Compile Include="GetRequest.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="PersonQuery.cs" />
     <Compile Include="PersonQueryTests.cs" />

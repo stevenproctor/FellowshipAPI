@@ -7,6 +7,9 @@ namespace FellowshipLib
 {
 	public class People : List<person>
 	{
+		public int PageNumber { get; set; }
+		public int TotalRecords { get; set; }
+		public int AdditionalPages { get; set; }
 	}
 
 	public class person
