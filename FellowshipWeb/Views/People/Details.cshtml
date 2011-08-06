@@ -12,7 +12,10 @@
 	<div class="display-field">@Model.GoesBy</div>
 	<div class="display-label">Last Updated</div>
 	<div class="display-field">@Model.LastUpdatedDate</div>
+	<div class="display-label">Date of Birth</div>
+	<div class="display-field">@Model.DateOfBirth</div>
+	<div class="display-label">Occupation</div>
+	<div class="display-field">@(Model.Occupation != null ? Model.Occupation.Name : string.Empty)</div>
 	<div class="display-label">HouseholdId</div>
-	<div class="display-field">@Model.HouseholdId</div>
 </fieldset>
 

@@ -24,9 +24,11 @@ namespace FellowshipWeb.Controllers
 			return View(results);
 		}
 
-		public ActionResult Details(string personId)
+		public ActionResult Details(string id)
 		{
-			Person p = new Person { Id = personId, FirstName = "john", LastName = "test", MiddleName = "Q", Prefix = "Mr", HouseholdId = "1234" };
+			var lookup = new PersonLookup(id);
+			lookup.FindPerson();
+			Person p = lookup.Result();
 			return View(p);
 		}
 	}

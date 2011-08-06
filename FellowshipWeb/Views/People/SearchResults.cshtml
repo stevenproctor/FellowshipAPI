@@ -1,0 +1,43 @@
+﻿@model FellowshipLib.PersonSearchResults
+
+
+<table>
+	<tr>
+		<th>Last Name</th>
+		<th>First Name</th>
+		<th>Middle Name</th>
+	</tr>
+
+@foreach (var item in Model)
+{
+	<tr class="linkable"  onclick="window.document.location = '@Url.Action("Details", new { id = item.Id })'" >
+		<td>
+			@item.LastName
+		</td>
+		<td>
+			@item.FirstName
+		</td>
+		<td>
+			@item.MiddleName
+		</td>
+	</tr>
+}
+</table>
+
+@using (Html.BeginForm("Search", "People", FormMethod.Get))
+{
+	<div class="tableFooter">
+			Page
+
+		@if (Model.PageNumber > 1)
+  {
+			@Html.ActionLink("Previous", "Search", new { name = Model.SearchName, pageNumber = Model.PageNumber - 1 })
+  }
+		<input type="text" name="pageNumber" value="@Model.PageNumber" /> of @Model.TotalPages()
+		<input type="hidden" name="maxPageNumber" value="@Model.TotalPages()" />
+		@if (Model.PageNumber < Model.TotalPages())
+  {
+			@Html.ActionLink("Next", "Search", new { name = Model.SearchName, pageNumber = Model.PageNumber + 1 })
+  }
+	</div>
+}
