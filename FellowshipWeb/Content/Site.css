@@ -66,3 +66,8 @@ textarea
 {
     display: none;
 }
+
+.linkable
+{
+	cursor: pointer;
+}

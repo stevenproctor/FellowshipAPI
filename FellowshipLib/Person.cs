@@ -7,10 +7,15 @@ namespace FellowshipLib
 {
 	public class People : List<Person>
 	{
+	}
+
+	public class PeopleSearchResults : List<Person>
+	{
 		public int PageNumber { get; set; }
 		public int TotalRecords { get; set; }
 		public int AdditionalPages { get; set; }
-		public int TotalPages() { return PageNumber + AdditionalPages;  }
+		public int TotalPages() { return PageNumber + AdditionalPages; }
+		public string SearchName { get; set; }
 	}
 
 	public class Person
@@ -18,6 +23,7 @@ namespace FellowshipLib
 		public string Id { get; set; }
 		public string Prefix { get; set; }
 		public string FirstName { get; set; }
+		public string MiddleName { get; set; }
 		public string LastName { get; set; }
 		public string HouseholdId { get; set; }
 	}

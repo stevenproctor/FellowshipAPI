@@ -19,6 +19,7 @@ namespace FellowshipLib
 			var people = query.Results();
 
 			people.Should().NotBeNull();
+			people.SearchName.Should().Be("A");
 			people.PageNumber.Should().Be(1);
 			people.AdditionalPages.Should().BeGreaterOrEqualTo(25, "AdditionalPages");
 			people.TotalRecords.Should().BeGreaterOrEqualTo(500, "TotalRecords");

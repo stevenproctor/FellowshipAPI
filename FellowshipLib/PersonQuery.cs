@@ -11,16 +11,18 @@ using System.Web;
 namespace FellowshipLib
 {
 
-	public class PersonQuery : GetRequest<People>
+	public class PersonQuery : GetRequest<PeopleSearchResults>
 	{
 		private const int MinimumNameParameterLength = 2;
 
 		private string searchName = string.Empty;
 		private int pageNumber;
+		private string specifiedName;
 
 		public PersonQuery(string name)
 		{
-			this.searchName = SanitizeName(name);
+			specifiedName = name;
+			this.searchName = SanitizeName(specifiedName);
 		}
 
 		private static string SanitizeName(string name)
@@ -34,6 +36,7 @@ namespace FellowshipLib
 		public void Search()
 		{
 			Get();
+			Results().SearchName = specifiedName;
 		}
 
 		protected override void AddParameters(RestRequest request)
