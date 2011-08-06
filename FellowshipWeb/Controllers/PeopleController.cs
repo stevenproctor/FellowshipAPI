@@ -20,7 +20,7 @@ namespace FellowshipWeb.Controllers
 
 			var query = new PersonSearch(name).AtPage(pageNumber);
 			query.Search();
-			var results = query.Results();
+			var results = query.Result();
 			return View(results);
 		}
 

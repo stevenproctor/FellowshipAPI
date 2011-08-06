@@ -16,7 +16,7 @@ namespace FellowshipLib
 		{
 			var query = new PersonSearch("A");
 			query.Search();
-			var people = query.Results();
+			var people = query.Result();
 
 			people.Should().NotBeNull();
 			people.SearchName.Should().Be("A");
@@ -32,7 +32,7 @@ namespace FellowshipLib
 		{
 			var query = new PersonSearch("Meyer");
 			query.Search();
-			var people = query.Results();
+			var people = query.Result();
 
 			people.Should().NotBeNull();
 			people.PageNumber.Should().Be(1, "PageNumber");
@@ -47,7 +47,7 @@ namespace FellowshipLib
 		{
 			var query = new PersonSearch("%").AtPage(100);
 			query.Search();
-			var people = query.Results();
+			var people = query.Result();
 
 			people.Should().NotBeNull();
 			people.PageNumber.Should().Be(100, "PageNumber");
@@ -59,7 +59,7 @@ namespace FellowshipLib
 		{
 			var query = new PersonSearch("%").AtPage(int.MaxValue);
 			query.Search();
-			var people = query.Results();
+			var people = query.Result();
 
 			people.Should().NotBeNull();
 			people.PageNumber.Should().Be(0, "PageNumber");
@@ -72,7 +72,7 @@ namespace FellowshipLib
 		{
 			var query = new PersonSearch(string.Empty);
 			query.Search();
-			var people = query.Results();
+			var people = query.Result();
 			people.Should().NotBeEmpty();
 		}
 	}

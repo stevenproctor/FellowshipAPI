@@ -8,9 +8,8 @@
     <Node UniqueName="[0-1016]C:\dev\interviews\fellowshipTech\FellowshipLib\bin\Debug\FellowshipLib.dll" Expanded="true" />
     <Node UniqueName="[0-1017]FellowshipLib" Expanded="true" />
     <Node UniqueName="[0-1018]FellowshipLib.Extensions" Expanded="true" />
-    <Node UniqueName="[0-1007]FellowshipLib.Extensions.SafeTrimTests" Expanded="true" />
-    <Node UniqueName="[0-1008]FellowshipLib.Extensions.SafeTrimTests.WhenSafeTrimIsCalledOnAString_TheStringShouldBeTrimmed" Expanded="true" />
-    <Node UniqueName="[0-1001]FellowshipLib.PersonQueryTests" Expanded="true" />
-    <Node UniqueName="[0-1005]FellowshipLib.PersonQueryTests.WhenSearchingForAPerson_AndAPageNumberLargerThanTheTotalPagesIsSpecified_ItShouldReturnNoResultsForThatPage" Expanded="true" />
+    <Node UniqueName="[0-1001]FellowshipLib.Extensions.SafeTrimTests" Expanded="true" />
+    <Node UniqueName="[0-1002]FellowshipLib.Extensions.SafeTrimTests.WhenSafeTrimIsCalledOnAString_TheStringShouldBeTrimmed" Expanded="true" />
+    <Node UniqueName="[0-1010]FellowshipLib.PersonSearchTests" Expanded="true" />
   </Nodes>
 </VisualState>

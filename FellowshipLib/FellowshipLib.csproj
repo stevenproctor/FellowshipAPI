@@ -64,6 +64,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Occupation.cs" />
+    <Compile Include="PersonLookup.cs" />
+    <Compile Include="PersonLookupTests.cs" />
     <Compile Include="PersonSearch.cs" />
     <Compile Include="PersonSearchTests.cs" />
     <Compile Include="SafeTrimTests.cs" />

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using RestSharp;
+using System.Net;
 
 namespace FellowshipLib
 {
@@ -16,6 +17,10 @@ namespace FellowshipLib
 			AddDefaultParameters(client);
 
 			var response = client.Execute<T>(request);
+			if (response.StatusCode == 0)
+				return default(T);
+			if (response.StatusCode == HttpStatusCode.NotFound)
+				return default(T);
 			if (response.Content.StartsWith("400"))
 				return new T();
 			if (response.Data == null)

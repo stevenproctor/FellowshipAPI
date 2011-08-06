@@ -36,7 +36,7 @@ namespace FellowshipLib
 		public void Search()
 		{
 			Get();
-			Results().SearchName = specifiedName;
+			Result().SearchName = specifiedName;
 		}
 
 		protected override void AddParameters(RestRequest request)

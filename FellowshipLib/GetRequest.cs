@@ -18,9 +18,11 @@ namespace FellowshipLib
 			AddParameters(request);
 			var apiRequest = new FellowshipAPI();
 			results = apiRequest.SendRequest<T>(request);
+			//success = apiRequest.Success;
+			//messages = apiRequest.GetMessages();
 		}
 
-		public T Results()
+		public T Result()
 		{
 			return results;
 		}
