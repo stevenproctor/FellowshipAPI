@@ -5,18 +5,19 @@ using System.Text;
 
 namespace FellowshipLib
 {
-	public class People : List<person>
+	public class People : List<Person>
 	{
 		public int PageNumber { get; set; }
 		public int TotalRecords { get; set; }
 		public int AdditionalPages { get; set; }
 	}
 
-	public class person
+	public class Person
 	{
 		public string Id { get; set; }
 		public string Prefix { get; set; }
 		public string FirstName { get; set; }
 		public string LastName { get; set; }
+		public string HouseholdId { get; set; }
 	}
 }

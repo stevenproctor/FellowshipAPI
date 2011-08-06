@@ -17,7 +17,7 @@ namespace FellowshipLib
 
 			var response = client.Execute<T>(request);
 			if (response.Content.StartsWith("400"))
-				return default(T);
+				return new T();
 			return response.Data;
 		}
 

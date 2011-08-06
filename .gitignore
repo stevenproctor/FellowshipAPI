@@ -1,3 +1,3 @@
-*.dll
-*.pdb
+!*/packages/*/lib/*.dll
+!*/packages/*/lib/*.pdb
 *.log

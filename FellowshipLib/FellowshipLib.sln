@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FellowshipLib", "FellowshipLib.csproj", "{2306358C-B318-463A-921F-AFA2DE920043}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FellowshipWeb", "..\FellowshipWeb\FellowshipWeb.csproj", "{FC513320-EBEC-433B-8917-3475358C6EA7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +15,10 @@ Global
 		{2306358C-B318-463A-921F-AFA2DE920043}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2306358C-B318-463A-921F-AFA2DE920043}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2306358C-B318-463A-921F-AFA2DE920043}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC513320-EBEC-433B-8917-3475358C6EA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC513320-EBEC-433B-8917-3475358C6EA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC513320-EBEC-433B-8917-3475358C6EA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC513320-EBEC-433B-8917-3475358C6EA7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

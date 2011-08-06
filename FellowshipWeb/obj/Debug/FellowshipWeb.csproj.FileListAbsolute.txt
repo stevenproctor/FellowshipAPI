@@ -1,0 +1,15 @@
+C:\dev\interviews\fellowshipTech\FellowshipWeb\bin\FellowshipWeb.dll
+C:\dev\interviews\fellowshipTech\FellowshipWeb\bin\FellowshipWeb.pdb
+C:\dev\interviews\fellowshipTech\FellowshipWeb\obj\Debug\ResolveAssemblyReference.cache
+C:\dev\interviews\fellowshipTech\FellowshipWeb\obj\Debug\FellowshipWeb.dll
+C:\dev\interviews\fellowshipTech\FellowshipWeb\obj\Debug\FellowshipWeb.pdb
+C:\dev\interviews\fellowshipTech\FellowshipWeb\bin\FellowshipLib.dll
+C:\dev\interviews\fellowshipTech\FellowshipWeb\bin\RestSharp.dll
+C:\dev\interviews\fellowshipTech\FellowshipWeb\bin\nunit.framework.dll
+C:\dev\interviews\fellowshipTech\FellowshipWeb\bin\FluentAssertions.dll
+C:\dev\interviews\fellowshipTech\FellowshipWeb\bin\Newtonsoft.Json.dll
+C:\dev\interviews\fellowshipTech\FellowshipWeb\bin\FellowshipLib.pdb
+C:\dev\interviews\fellowshipTech\FellowshipWeb\bin\nunit.framework.xml
+C:\dev\interviews\fellowshipTech\FellowshipWeb\bin\FluentAssertions.xml
+C:\dev\interviews\fellowshipTech\FellowshipWeb\bin\Newtonsoft.Json.pdb
+C:\dev\interviews\fellowshipTech\FellowshipWeb\bin\Newtonsoft.Json.xml
