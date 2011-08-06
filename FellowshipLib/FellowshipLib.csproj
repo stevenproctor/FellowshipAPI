@@ -63,6 +63,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Occupation.cs" />
     <Compile Include="SafeTrimTests.cs" />
     <Compile Include="StringExtensions.cs" />
     <Compile Include="FellowshipAPI.cs" />

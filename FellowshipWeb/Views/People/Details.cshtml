@@ -1,16 +1,18 @@
 ﻿@model FellowshipLib.Person
 
 @{
-    ViewBag.Title = "Details";
+	ViewBag.Title = "Details";
 }
 
 <h2>Details</h2>
 
 <fieldset>
-    <legend>@Model.Prefix @Model.FirstName @Model.MiddleName @Model.LastName</legend>
-
-
-    <div class="display-label">HouseholdId</div>
-    <div class="display-field">@Model.HouseholdId</div>
+	<legend>@Model.Prefix @Model.FirstName @Model.MiddleName @Model.LastName</legend>
+	<div class="display-label">Goes By</div>
+	<div class="display-field">@Model.GoesBy</div>
+	<div class="display-label">Last Updated</div>
+	<div class="display-field">@Model.LastUpdatedDate</div>
+	<div class="display-label">HouseholdId</div>
+	<div class="display-field">@Model.HouseholdId</div>
 </fieldset>
 

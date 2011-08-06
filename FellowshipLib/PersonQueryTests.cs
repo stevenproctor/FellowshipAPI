@@ -12,7 +12,7 @@ namespace FellowshipLib
 	{
 		[Test]
 		[Category("IntegrationTest")]
-		public void WhenSearchingForAPerson_WithANameOfA_ItShouldReturnAnEnumerationOfPeople()
+		public void WhenSearchingForAPerson_WithANameOfA_ItShouldReturnAPeopleSearchResults()
 		{
 			var query = new PersonQuery("A");
 			query.Search();
@@ -28,7 +28,7 @@ namespace FellowshipLib
 		
 		[Test]
 		[Category("IntegrationTest")]
-		public void WhenSearchingForAPerson_WithANameOfMeyer_ItShouldReturnAnEnumerationOfPeople()
+		public void WhenSearchingForAPerson_WithANameOfMeyer_ItShouldReturnAPeopleSearchResults()
 		{
 			var query = new PersonQuery("Meyer");
 			query.Search();
