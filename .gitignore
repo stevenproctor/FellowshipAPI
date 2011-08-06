@@ -1,6 +1,9 @@
+*.dll
+*.pdb
 !*/packages/*/lib/*.dll
 !*/packages/*/lib/*.pdb
 */[Bb]in/*
 */[Dd]ebug/*
+*/[Oo]bj/*
 */[Rr]elease/*
 *.log
