@@ -18,7 +18,7 @@ namespace FellowshipWeb.Controllers
 			if (maxPageNumber != -1 && pageNumber > maxPageNumber)
 				pageNumber = maxPageNumber;
 
-			var query = new PersonQuery(name).AtPage(pageNumber);
+			var query = new PersonSearch(name).AtPage(pageNumber);
 			query.Search();
 			var results = query.Results();
 			return View(results);

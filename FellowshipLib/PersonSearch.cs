@@ -11,7 +11,7 @@ using System.Web;
 namespace FellowshipLib
 {
 
-	public class PersonQuery : GetRequest<PeopleSearchResults>
+	public class PersonSearch : GetRequest<PersonSearchResults>
 	{
 		private const int MinimumNameParameterLength = 2;
 
@@ -19,7 +19,7 @@ namespace FellowshipLib
 		private int pageNumber;
 		private string specifiedName;
 
-		public PersonQuery(string name)
+		public PersonSearch(string name)
 		{
 			specifiedName = name;
 			this.searchName = SanitizeName(specifiedName);
@@ -52,7 +52,7 @@ namespace FellowshipLib
 			return "People/Search";
 		}
 
-		public PersonQuery AtPage(int pageNumber)
+		public PersonSearch AtPage(int pageNumber)
 		{
 			this.pageNumber = pageNumber;
 			return this;

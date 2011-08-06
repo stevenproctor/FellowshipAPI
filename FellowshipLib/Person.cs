@@ -9,7 +9,7 @@ namespace FellowshipLib
 	{
 	}
 
-	public class PeopleSearchResults : List<Person>
+	public class PersonSearchResults : List<Person>
 	{
 		public int PageNumber { get; set; }
 		public int TotalRecords { get; set; }

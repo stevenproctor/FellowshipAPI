@@ -64,13 +64,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Occupation.cs" />
+    <Compile Include="PersonSearch.cs" />
+    <Compile Include="PersonSearchTests.cs" />
     <Compile Include="SafeTrimTests.cs" />
     <Compile Include="StringExtensions.cs" />
     <Compile Include="FellowshipAPI.cs" />
     <Compile Include="GetRequest.cs" />
     <Compile Include="Person.cs" />
-    <Compile Include="PersonQuery.cs" />
-    <Compile Include="PersonQueryTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
