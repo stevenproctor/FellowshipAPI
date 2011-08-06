@@ -1,28 +1,82 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
 <!--This file represents the results of running a test suite-->
-<test-results name="C:\dev\interviews\fellowshipTech\FellowshipLib\FellowshipLib.csproj" total="1" errors="1" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2011-08-06" time="16:28:06">
+<test-results name="C:\dev\interviews\fellowshipTech\FellowshipLib\FellowshipLib.csproj" total="15" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2011-08-06" time="17:34:07">
   <environment nunit-version="2.5.9.10348" clr-version="2.0.50727.5446" os-version="Microsoft Windows NT 6.1.7601 Service Pack 1" platform="Win32NT" cwd="C:\Program Files (x86)\NUnit 2.5.9\bin\net-2.0" machine-name="STEVENPROCTEA4D" user="Administrator" user-domain="STEVENPROCTEA4D" />
   <culture-info current-culture="en-US" current-uiculture="en-US" />
-  <test-suite type="Project" name="C:\dev\interviews\fellowshipTech\FellowshipLib\FellowshipLib.csproj" executed="True" result="Failure" success="False" time="66.609" asserts="0">
+  <test-suite type="Project" name="C:\dev\interviews\fellowshipTech\FellowshipLib\FellowshipLib.csproj" executed="True" result="Success" success="True" time="2.391" asserts="0">
     <results>
-      <test-suite type="Assembly" name="C:\dev\interviews\fellowshipTech\FellowshipLib\bin\Debug\FellowshipLib.dll" executed="True" result="Failure" success="False" time="66.594" asserts="0">
+      <test-suite type="Assembly" name="C:\dev\interviews\fellowshipTech\FellowshipLib\bin\Debug\FellowshipLib.dll" executed="True" result="Success" success="True" time="2.375" asserts="0">
         <results>
-          <test-suite type="Namespace" name="FellowshipLib" executed="True" result="Failure" success="False" time="66.594" asserts="0">
+          <test-suite type="Namespace" name="FellowshipLib" executed="True" result="Success" success="True" time="2.375" asserts="0">
             <results>
-              <test-suite type="TestFixture" name="PersonLookupTests" executed="True" result="Failure" success="False" time="66.594" asserts="0">
+              <test-suite type="Namespace" name="Extensions" executed="True" result="Success" success="True" time="0.094" asserts="0">
                 <results>
-                  <test-case name="FellowshipLib.PersonLookupTests.WhenSearchingForAUserByAnInvctalidId_TheUserShouldNotBeNull" executed="True" result="Error" success="False" time="66.594" asserts="0">
+                  <test-suite type="TestFixture" name="SafeTrimTests" executed="True" result="Success" success="True" time="0.094" asserts="0">
+                    <results>
+                      <test-suite type="ParameterizedTest" name="WhenSafeTrimIsCalledOnAString_TheStringShouldBeTrimmed" executed="True" result="Success" success="True" time="0.094" asserts="0">
+                        <results>
+                          <test-case name="FellowshipLib.Extensions.SafeTrimTests.WhenSafeTrimIsCalledOnAString_TheStringShouldBeTrimmed(&quot;   1234&quot;,&quot;1234&quot;)" executed="True" result="Success" success="True" time="0.063" asserts="1" />
+                          <test-case name="FellowshipLib.Extensions.SafeTrimTests.WhenSafeTrimIsCalledOnAString_TheStringShouldBeTrimmed(&quot;    &quot;,&quot;&quot;)" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                          <test-case name="FellowshipLib.Extensions.SafeTrimTests.WhenSafeTrimIsCalledOnAString_TheStringShouldBeTrimmed(&quot;   1234  &quot;,&quot;1234&quot;)" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                          <test-case name="FellowshipLib.Extensions.SafeTrimTests.WhenSafeTrimIsCalledOnAString_TheStringShouldBeTrimmed(&quot;1234&quot;,&quot;1234&quot;)" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                          <test-case name="FellowshipLib.Extensions.SafeTrimTests.WhenSafeTrimIsCalledOnAString_TheStringShouldBeTrimmed(null,&quot;&quot;)" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                          <test-case name="FellowshipLib.Extensions.SafeTrimTests.WhenSafeTrimIsCalledOnAString_TheStringShouldBeTrimmed(&quot;&quot;,&quot;&quot;)" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                          <test-case name="FellowshipLib.Extensions.SafeTrimTests.WhenSafeTrimIsCalledOnAString_TheStringShouldBeTrimmed(&quot;1234  &quot;,&quot;1234&quot;)" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                        </results>
+                      </test-suite>
+                    </results>
+                  </test-suite>
+                </results>
+              </test-suite>
+              <test-suite type="TestFixture" name="HouseholdLookupTests" executed="True" result="Success" success="True" time="1.266" asserts="0">
+                <results>
+                  <test-case name="FellowshipLib.HouseholdLookupTests.WhenFindingAHouseholdByUser_ThatUserShouldBeInThatHousehold" executed="True" result="Success" success="True" time="1.250" asserts="0">
+                    <categories>
+                      <category name="IntegrationTest" />
+                    </categories>
+                  </test-case>
+                </results>
+              </test-suite>
+              <test-suite type="TestFixture" name="PersonLookupTests" executed="True" result="Success" success="True" time="0.156" asserts="0">
+                <results>
+                  <test-case name="FellowshipLib.PersonLookupTests.WhenSearchingForAUserByAnInvctalidId_TheUserShouldNotBeNull" executed="True" result="Success" success="True" time="0.109" asserts="0">
                     <categories>
                       <category name="IntegrationTests" />
                     </categories>
-                    <failure>
-                      <message><![CDATA[System.NullReferenceException : Object reference not set to an instance of an object.]]></message>
-                      <stack-trace><![CDATA[at FellowshipLib.FellowshipAPI.SendRequest[T](RestRequest request) in C:\dev\interviews\fellowshipTech\FellowshipLib\FellowshipAPI.cs:line 20
-at FellowshipLib.GetRequest`1.Get() in C:\dev\interviews\fellowshipTech\FellowshipLib\GetRequest.cs:line 20
-at FellowshipLib.PersonLookup.FindPerson() in C:\dev\interviews\fellowshipTech\FellowshipLib\PersonLookup.cs:line 22
-at FellowshipLib.PersonLookupTests.WhenSearchingForAUserByAnInvctalidId_TheUserShouldNotBeNull() in C:\dev\interviews\fellowshipTech\FellowshipLib\PersonLookupTests.cs:line 28
-]]></stack-trace>
-                    </failure>
+                  </test-case>
+                  <test-case name="FellowshipLib.PersonLookupTests.WhenSearchingForAUserByAValidId_TheUserShouldNotBeNull" executed="True" result="Success" success="True" time="0.047" asserts="0">
+                    <categories>
+                      <category name="IntegrationTests" />
+                    </categories>
+                  </test-case>
+                </results>
+              </test-suite>
+              <test-suite type="TestFixture" name="PersonSearchTests" executed="True" result="Success" success="True" time="0.844" asserts="0">
+                <results>
+                  <test-case name="FellowshipLib.PersonSearchTests.WhenSearchingForAPerson_AndAPageNumberIsSpecified_ItShouldReturnTheResultsForThatPage" executed="True" result="Success" success="True" time="0.250" asserts="0">
+                    <categories>
+                      <category name="IntegrationTest" />
+                    </categories>
+                  </test-case>
+                  <test-case name="FellowshipLib.PersonSearchTests.WhenSearchingForAPerson_AndAPageNumberLargerThanTheTotalPagesIsSpecified_ItShouldReturnNoResultsForThatPage" executed="True" result="Success" success="True" time="0.172" asserts="0">
+                    <categories>
+                      <category name="IntegrationTest" />
+                    </categories>
+                  </test-case>
+                  <test-case name="FellowshipLib.PersonSearchTests.WhenSearchingForAPerson_WithANameOfA_ItShouldReturnAPeopleSearchResults" executed="True" result="Success" success="True" time="0.156" asserts="0">
+                    <categories>
+                      <category name="IntegrationTest" />
+                    </categories>
+                  </test-case>
+                  <test-case name="FellowshipLib.PersonSearchTests.WhenSearchingForAPerson_WithANameOfMeyer_ItShouldReturnAPeopleSearchResults" executed="True" result="Success" success="True" time="0.078" asserts="0">
+                    <categories>
+                      <category name="IntegrationTest" />
+                    </categories>
+                  </test-case>
+                  <test-case name="FellowshipLib.PersonSearchTests.WhenSearchingForAPerson_WithNoNameSpecified_ItShouldBeTheSameAsAWildcardSearch" executed="True" result="Success" success="True" time="0.188" asserts="0">
+                    <categories>
+                      <category name="IntegrationTest" />
+                    </categories>
                   </test-case>
                 </results>
               </test-suite>

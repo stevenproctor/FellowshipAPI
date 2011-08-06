@@ -29,8 +29,8 @@ namespace FellowshipLib
 		public string Gender { get; set; }
 		public string DateOfBirth { get; set; }
 		public string Employer { get; set; }
+		public string HouseholdID { get; set; }
 		public Occupation Occupation { get; set; }
-		public string HouseholdId { get; set; }
 		public string CreatedDate { get; set; }
 		public string LastUpdatedDate { get; set; }
 	}
