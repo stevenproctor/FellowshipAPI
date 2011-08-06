@@ -47,7 +47,7 @@ namespace FellowshipLib
 			var query = new PersonQuery();
 			query.Search();
 			var people = query.Results();
-			people.Should().BeNull();
+			people.Should().BeEmpty();
 		}
 	}
 }

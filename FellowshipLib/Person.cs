@@ -10,6 +10,7 @@ namespace FellowshipLib
 		public int PageNumber { get; set; }
 		public int TotalRecords { get; set; }
 		public int AdditionalPages { get; set; }
+		public int TotalPages() { return PageNumber + AdditionalPages;  }
 	}
 
 	public class Person

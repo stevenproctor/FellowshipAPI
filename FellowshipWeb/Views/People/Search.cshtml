@@ -1,25 +1,27 @@
-﻿@model IEnumerable<FellowshipLib.Person>
+﻿@model FellowshipLib.People
 
 @{
 	ViewBag.Title = "PeopleSearch";
 }
 
 <h2>PeopleSearch</h2>
-
-<p>
-	@Html.ActionLink("Create New", "Create")
-</p>
+@using (Html.BeginForm("Search", "People", FormMethod.Get, new { id = "search" }))
+{
+<label for="name" title="Find Users with Name" >Find users with name</label>
+<input type="text" name="name" value="@ViewBag.SearchCriteria" />
+<input id="search" type="submit" value="Search" />
+}
 <table>
 	<tr>
 		<th></th>
+		<th>Last Name</th>
+		<th>First Name</th>
 	</tr>
 
 @foreach (var item in Model) {
 	<tr>
 		<td>
-			@Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-			@Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-			@Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+			@Html.ActionLink("Details", "Details", new { id=item.Id }) 
 		</td>
 		<td>
 			@item.LastName
@@ -27,8 +29,27 @@
 		<td>
 			@item.FirstName
 		</td>
+		<td>
+			@Html.ActionLink("View Household", "Household", new { id=item.HouseholdId })
+		</td>
 	</tr>
 }
-
 </table>
 
+@using (Html.BeginForm("Search", "People", FormMethod.Get, new { id = "search" }))
+{
+	<div class="tableFooter">
+			Page
+
+		@if (Model.PageNumber > 1)
+		{
+			@Html.ActionLink("Previous", "Search", new { name = ViewBag.SearchCriteria, pageNumber = Model.PageNumber - 1 })
+		}
+		<input type="text" name="pageNumber" value="@Model.PageNumber" /> of @Model.TotalPages()
+		<input type="hidden" name="name" value="@ViewBag.SearchCriteria" />
+		@if (Model.PageNumber < Model.TotalPages())
+		{
+			@Html.ActionLink("Next", "Search", new { name = ViewBag.SearchCriteria, pageNumber = Model.PageNumber + 1 })
+		}
+	</div>
+}

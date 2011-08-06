@@ -63,6 +63,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="SafeTrimTests.cs" />
+    <Compile Include="StringExtensions.cs" />
     <Compile Include="FellowshipAPI.cs" />
     <Compile Include="GetRequest.cs" />
     <Compile Include="Person.cs" />
