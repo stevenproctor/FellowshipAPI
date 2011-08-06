@@ -1,30 +1,30 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
 <!--This file represents the results of running a test suite-->
-<test-results name="C:\dev\interviews\fellowshipTech\FellowshipLib\FellowshipLib.csproj" total="3" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2011-08-05" time="01:16:28">
+<test-results name="C:\dev\interviews\fellowshipTech\FellowshipLib\FellowshipLib.csproj" total="1" errors="0" failures="1" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2011-08-06" time="00:48:17">
   <environment nunit-version="2.5.9.10348" clr-version="2.0.50727.5420" os-version="Microsoft Windows NT 6.1.7601 Service Pack 1" platform="Win32NT" cwd="C:\Program Files (x86)\NUnit 2.5.9\bin\net-2.0" machine-name="STEVENPROCTEA4D" user="Administrator" user-domain="STEVENPROCTEA4D" />
   <culture-info current-culture="en-US" current-uiculture="en-US" />
-  <test-suite type="Project" name="C:\dev\interviews\fellowshipTech\FellowshipLib\FellowshipLib.csproj" executed="True" result="Success" success="True" time="1.423" asserts="0">
+  <test-suite type="Project" name="C:\dev\interviews\fellowshipTech\FellowshipLib\FellowshipLib.csproj" executed="True" result="Failure" success="False" time="210.004" asserts="0">
     <results>
-      <test-suite type="Assembly" name="C:\dev\interviews\fellowshipTech\FellowshipLib\bin\Debug\FellowshipLib.dll" executed="True" result="Success" success="True" time="1.407" asserts="0">
+      <test-suite type="Assembly" name="C:\dev\interviews\fellowshipTech\FellowshipLib\bin\Debug\FellowshipLib.dll" executed="True" result="Failure" success="False" time="209.991" asserts="0">
         <results>
-          <test-suite type="Namespace" name="FellowshipLib" executed="True" result="Success" success="True" time="1.404" asserts="0">
+          <test-suite type="Namespace" name="FellowshipLib" executed="True" result="Failure" success="False" time="209.990" asserts="0">
             <results>
-              <test-suite type="TestFixture" name="PersonQueryTests" executed="True" result="Success" success="True" time="1.401" asserts="0">
+              <test-suite type="TestFixture" name="PersonQueryTests" executed="True" result="Failure" success="False" time="209.967" asserts="0">
                 <results>
-                  <test-case name="FellowshipLib.PersonQueryTests.WhenSearchingForAPerson_WithANameOfA_ItShouldReturnAnEnumerationOfPeople" executed="True" result="Success" success="True" time="1.238" asserts="0">
+                  <test-case name="FellowshipLib.PersonQueryTests.WhenSearchingForAPerson_AndAPageNumberLargerThanTheTotalPagesIsSpecified_ItShouldReturnNoResultsForThatPage" executed="True" result="Failure" success="False" time="209.956" asserts="0">
                     <categories>
                       <category name="IntegrationTest" />
                     </categories>
-                  </test-case>
-                  <test-case name="FellowshipLib.PersonQueryTests.WhenSearchingForAPerson_WithANameOfMeyer_ItShouldReturnAnEnumerationOfPeople" executed="True" result="Success" success="True" time="0.098" asserts="0">
-                    <categories>
-                      <category name="IntegrationTest" />
-                    </categories>
-                  </test-case>
-                  <test-case name="FellowshipLib.PersonQueryTests.WhenSearchingForAPerson_WithNoNameSpecified" executed="True" result="Success" success="True" time="0.051" asserts="0">
-                    <categories>
-                      <category name="IntegrationTest" />
-                    </categories>
+                    <failure>
+                      <message><![CDATA[Expected collection not to be <null>.]]></message>
+                      <stack-trace><![CDATA[at FluentAssertions.Frameworks.LateBoundTestFramework.Throw(String message)
+at FluentAssertions.Frameworks.AssertionHelper.Throw(String message)
+at FluentAssertions.Verification.FailWith(String failureMessage, Object[] failureArgs)
+at FluentAssertions.Assertions.CollectionAssertions`2.NotBeNull(String reason, Object[] reasonArgs)
+at FluentAssertions.Assertions.CollectionAssertions`2.NotBeNull()
+at FellowshipLib.PersonQueryTests.WhenSearchingForAPerson_AndAPageNumberLargerThanTheTotalPagesIsSpecified_ItShouldReturnNoResultsForThatPage() in C:\dev\interviews\fellowshipTech\FellowshipLib\PersonQueryTests.cs:line 64
+]]></stack-trace>
+                    </failure>
                   </test-case>
                 </results>
               </test-suite>

@@ -16,12 +16,11 @@ namespace FellowshipLib
 		private const int MinimumNameParameterLength = 2;
 
 		private string searchName = string.Empty;
-		
-		public PersonQuery WithNameOf(string name)
+		private int pageNumber;
+
+		public PersonQuery(string name)
 		{
-			name = SanitizeName(name);
-			this.searchName = name;
-			return this;
+			this.searchName = SanitizeName(name);
 		}
 
 		private static string SanitizeName(string name)
@@ -29,7 +28,7 @@ namespace FellowshipLib
 			if (name == null)
 				name = string.Empty;
 
-			return name.PadLeft(MinimumNameParameterLength);
+			return name.PadLeft(MinimumNameParameterLength, '%');
 		}
 
 		public void Search()
@@ -40,11 +39,20 @@ namespace FellowshipLib
 		protected override void AddParameters(RestRequest request)
 		{
 			request.AddParameter("searchFor", searchName, ParameterType.GetOrPost);
+			if (pageNumber > 0)
+				request.AddParameter("page", pageNumber, ParameterType.GetOrPost);
+
 		}
 
 		protected override string GetResource()
 		{
 			return "People/Search";
+		}
+
+		public PersonQuery AtPage(int pageNumber)
+		{
+			this.pageNumber = pageNumber;
+			return this;
 		}
 	}
 }

@@ -18,6 +18,8 @@ namespace FellowshipLib
 			var response = client.Execute<T>(request);
 			if (response.Content.StartsWith("400"))
 				return new T();
+			if (response.Data == null)
+				return new T();
 			return response.Data;
 		}
 

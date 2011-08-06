@@ -47,6 +47,7 @@
 		}
 		<input type="text" name="pageNumber" value="@Model.PageNumber" /> of @Model.TotalPages()
 		<input type="hidden" name="name" value="@ViewBag.SearchCriteria" />
+		<input type="hidden" name="maxPageNumber" value="@Model.TotalPages()" />
 		@if (Model.PageNumber < Model.TotalPages())
 		{
 			@Html.ActionLink("Next", "Search", new { name = ViewBag.SearchCriteria, pageNumber = Model.PageNumber + 1 })

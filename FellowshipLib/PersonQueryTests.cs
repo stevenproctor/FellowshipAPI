@@ -14,7 +14,7 @@ namespace FellowshipLib
 		[Category("IntegrationTest")]
 		public void WhenSearchingForAPerson_WithANameOfA_ItShouldReturnAnEnumerationOfPeople()
 		{
-			var query = new PersonQuery().WithNameOf("A");
+			var query = new PersonQuery("A");
 			query.Search();
 			var people = query.Results();
 
@@ -29,7 +29,7 @@ namespace FellowshipLib
 		[Category("IntegrationTest")]
 		public void WhenSearchingForAPerson_WithANameOfMeyer_ItShouldReturnAnEnumerationOfPeople()
 		{
-			var query = new PersonQuery().WithNameOf("Meyer");
+			var query = new PersonQuery("Meyer");
 			query.Search();
 			var people = query.Results();
 
@@ -42,12 +42,37 @@ namespace FellowshipLib
 
 		[Test]
 		[Category("IntegrationTest")]
-		public void WhenSearchingForAPerson_WithNoNameSpecified()
+		public void WhenSearchingForAPerson_AndAPageNumberIsSpecified_ItShouldReturnTheResultsForThatPage()
 		{
-			var query = new PersonQuery();
+			var query = new PersonQuery("%").AtPage(100);
 			query.Search();
 			var people = query.Results();
-			people.Should().BeEmpty();
+
+			people.Should().NotBeNull();
+			people.PageNumber.Should().Be(100, "PageNumber");
+		}
+
+		[Test]
+		[Category("IntegrationTest")]
+		public void WhenSearchingForAPerson_AndAPageNumberLargerThanTheTotalPagesIsSpecified_ItShouldReturnNoResultsForThatPage()
+		{
+			var query = new PersonQuery("%").AtPage(int.MaxValue);
+			query.Search();
+			var people = query.Results();
+
+			people.Should().NotBeNull();
+			people.PageNumber.Should().Be(0, "PageNumber");
+			people.TotalRecords.Should().Be(0, "TotalRecords");
+		}
+
+		[Test]
+		[Category("IntegrationTest")]
+		public void WhenSearchingForAPerson_WithNoNameSpecified_ItShouldBeTheSameAsAWildcardSearch()
+		{
+			var query = new PersonQuery(string.Empty);
+			query.Search();
+			var people = query.Results();
+			people.Should().NotBeEmpty();
 		}
 	}
 }
