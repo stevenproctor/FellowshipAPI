@@ -7,10 +7,11 @@ using System.Net;
 
 namespace FellowshipLib
 {
-	internal class FellowshipAPI
+	internal class FellowshipAPI<T> where T : new()
 	{
 		private const string baseUrl = "https://demo.fellowshiponeapi.com/v1/";
-		public T SendRequest<T>(RestRequest request) where T : new()
+		private T resultSet;
+		public void SendRequest(RestRequest request)
 		{
 			var client = new RestClient();
 			client.BaseUrl = baseUrl;
@@ -20,31 +21,33 @@ namespace FellowshipLib
 			if (response.StatusCode == 0)
 			{
 				Succeeded = false;
-				return default(T);
+				resultSet = default(T);
 			}
-			if (response.StatusCode == HttpStatusCode.MethodNotAllowed)
+			else if (response.StatusCode == HttpStatusCode.MethodNotAllowed)
 			{
 				Succeeded = false;
-				return default(T);
+				resultSet = default(T);
 			}
-			if (response.StatusCode == HttpStatusCode.NotFound)
+			else if (response.StatusCode == HttpStatusCode.NotFound)
 			{
 				Succeeded = false;
-				return default(T);
+				resultSet = default(T);
 			}
-			if (response.Content.StartsWith("400"))
+			else if (response.Content.StartsWith("400"))
 			{
 				Succeeded = false;
-				return new T();
+				resultSet = new T();
 			}
-			if (response.Data == null)
+			else if (response.Data == null)
 			{
 				Succeeded = false;
-				return new T();
+				resultSet = new T();
 			}
-
-			Succeeded = true;
-			return response.Data;
+			else
+			{
+				Succeeded = true;
+				resultSet = response.Data;
+			}
 		}
 
 		private static void AddDefaultParameters(RestClient client)
@@ -53,5 +56,10 @@ namespace FellowshipLib
 		}
 
 		public bool Succeeded { get; private set; }
+
+		internal T GetResultSet()
+		{
+			return resultSet;
+		}
 	}
 }

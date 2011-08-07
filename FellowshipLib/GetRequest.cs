@@ -17,10 +17,11 @@ namespace FellowshipLib
 			request.Resource = GetResource() + ".xml";
 			request.RequestFormat = DataFormat.Xml;
 			AddParameters(request);
-			var apiRequest = new FellowshipAPI();
-			results = apiRequest.SendRequest<T>(request);
+			var apiRequest = new FellowshipAPI<T>();
+			apiRequest.SendRequest(request);
 			succeeded = apiRequest.Succeeded;
 			//messages = apiRequest.GetMessages();
+			results = apiRequest.GetResultSet();
 		}
 
 		public bool Succeeded()
