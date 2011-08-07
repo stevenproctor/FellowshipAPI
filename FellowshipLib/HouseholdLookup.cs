@@ -6,7 +6,7 @@ using RestSharp;
 
 namespace FellowshipLib
 {
-	class HouseholdLookup : GetRequest<People>
+	public class HouseholdLookup : GetRequest<People>
 	{
 		private const string HouseholdIdParameter = "HouseholdId";
 		private const string Resource = "households/{" + HouseholdIdParameter + "}/people";
@@ -18,7 +18,7 @@ namespace FellowshipLib
 			this.householdId = householdId;
 		}
 
-		internal void FindHousehold()
+		public void FindHousehold()
 		{
 			Get();
 		}

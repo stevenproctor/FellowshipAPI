@@ -1,27 +1,26 @@
 ﻿@model FellowshipLib.PersonSearchResults
 
 @{
-	ViewBag.Title = "Find Person by Name";
+	ViewBag.Title = "Find People";
 }
 
 <h2>@ViewBag.Title</h2>
 @using (Html.BeginForm("Search", "People", FormMethod.Get, new { id = "search" }))
 {
-<label for="name" title="Find Users with Name" >Find users with name</label>
+<label for="name" title="Find Users with Name" >Name:</label>
 <input type="text" name="name" value="@Model.SearchName" />
 <input id="search" type="submit" value="Search" />
 }
-<div class="results">
+
 @if (Model.Count == 0)
 {
-	<div>
+	<div class="message">
 	@Html.Partial("NoPeopleFound", Model)
 	</div>
 }
 else
 {	
-	<div>
+	<div class="results">
 	@Html.Partial("SearchResults", Model)
 	</div>
 }
-</div>

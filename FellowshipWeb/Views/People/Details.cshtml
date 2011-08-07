@@ -7,7 +7,7 @@
 <h2>Details</h2>
 
 <fieldset>
-	<legend>@Model.Prefix @Model.FirstName @Model.MiddleName @Model.LastName</legend>
+	<legend>@Model.Prefix @Model.FirstName @Model.MiddleName @Model.LastName @Model.Suffix</legend>
 	<div class="display-label">Goes By</div>
 	<div class="display-field">@Model.GoesBy</div>
 	<div class="display-label">Last Updated</div>
@@ -16,6 +16,6 @@
 	<div class="display-field">@Model.DateOfBirth</div>
 	<div class="display-label">Occupation</div>
 	<div class="display-field">@(Model.Occupation != null ? Model.Occupation.Name : string.Empty)</div>
-	<div class="display-label">HouseholdId</div>
+	@Html.ActionLink("View Household", "Details", "Household", new { id = Model.HouseholdID }, new { })
 </fieldset>
 

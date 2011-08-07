@@ -1,28 +1,7 @@
 ﻿@model FellowshipLib.PersonSearchResults
 
 
-<table>
-	<tr>
-		<th>Last Name</th>
-		<th>First Name</th>
-		<th>Middle Name</th>
-	</tr>
-
-@foreach (var item in Model)
-{
-	<tr class="linkable"  onclick="window.document.location = '@Url.Action("Details", new { id = item.Id })'" >
-		<td>
-			@item.LastName
-		</td>
-		<td>
-			@item.FirstName
-		</td>
-		<td>
-			@item.MiddleName
-		</td>
-	</tr>
-}
-</table>
+@Html.Partial("PeopleListing", Model)
 
 @using (Html.BeginForm("Search", "People", FormMethod.Get))
 {
