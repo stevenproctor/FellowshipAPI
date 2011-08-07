@@ -31,5 +31,10 @@ namespace FellowshipWeb.Controllers
 			Person p = lookup.Result();
 			return View(p);
 		}
+
+		public ActionResult Addresses(string id)
+		{
+			return View();
+		}
 	}
 }

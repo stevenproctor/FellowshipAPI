@@ -63,6 +63,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Address.cs" />
     <Compile Include="HouseholdLookup.cs" />
     <Compile Include="HouseholdLookupTests.cs" />
     <Compile Include="Occupation.cs" />

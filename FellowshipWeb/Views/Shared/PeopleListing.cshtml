@@ -12,7 +12,7 @@
 	<tbody>
 @foreach (var item in Model)
 {
-		<tr class="linkable"  onclick="window.document.location = '@Url.Action("Details", new { id = item.Id })'" >
+		<tr class="linkable"  onclick="window.document.location = '@Url.Action("Details", "People", new { id = item.Id })'" >
 			<td>
 				@item.LastName
 			</td>
