@@ -12,6 +12,7 @@ namespace FellowshipLib
 	{
 		private const string baseUrl = "https://demo.fellowshiponeapi.com/v1/";
 		private T resultSet;
+		private string messages;
 		public void SendRequest(RestRequest request)
 		{
 			var client = new RestClient();
@@ -23,15 +24,12 @@ namespace FellowshipLib
 			{
 				Succeeded = false;
 				resultSet = default(T);
+				messages = response.StatusDescription;
 			}
-			else if (response.Content.StartsWith("400"))
+			else if (response.Content.StartsWith("400: "))
 			{
 				Succeeded = false;
-				resultSet = new T();
-			}
-			else if (response.Data == null)
-			{
-				Succeeded = false;
+				messages = response.Content.Replace("400: ", "");
 				resultSet = new T();
 			}
 			else
@@ -47,6 +45,11 @@ namespace FellowshipLib
 		}
 
 		public bool Succeeded { get; private set; }
+
+		public string GetMessages()
+		{
+			return messages;
+		}
 
 		internal T GetResultSet()
 		{

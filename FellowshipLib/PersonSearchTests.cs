@@ -64,6 +64,15 @@ namespace FellowshipLib
 
 		[Test]
 		[Category("IntegrationTest")]
+		public void WhenSearchingForAPerson_WithANameOfTwoSpaces()
+		{
+			var query = new PersonSearch("  ").AtPage(int.MaxValue);
+			query.Search();
+			query.Succeeded().Should().BeFalse();
+		}
+
+		[Test]
+		[Category("IntegrationTest")]
 		public void WhenSearchingForAPerson_WithNoNameSpecified_ItShouldBeTheSameAsAWildcardSearch()
 		{
 			var query = new PersonSearch(string.Empty);

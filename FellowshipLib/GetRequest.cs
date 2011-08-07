@@ -10,6 +10,7 @@ namespace FellowshipLib
 	{
 		private T results;
 		private bool succeeded;
+		private string messages;
 
 		protected void Get()
 		{
@@ -20,13 +21,18 @@ namespace FellowshipLib
 			var apiRequest = new FellowshipAPI<T>();
 			apiRequest.SendRequest(request);
 			succeeded = apiRequest.Succeeded;
-			//messages = apiRequest.GetMessages();
+			messages = apiRequest.GetMessages();
 			results = apiRequest.GetResultSet();
 		}
 
 		public bool Succeeded()
 		{
 			return succeeded;
+		}
+
+		public string GetMessages()
+		{
+			return messages;
 		}
 
 		public T Result()
