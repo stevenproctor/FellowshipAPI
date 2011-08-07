@@ -1,8 +1,32 @@
 ﻿@model IEnumerable<FellowshipLib.Address>
 
 @{
-    ViewBag.Title = "Addresses";
+	ViewBag.Title = "Addresses";
 }
 
 <h2>Addresses</h2>
-
+<table>
+	<thead>
+		<tr>
+			<th>Address</th>
+			<th>City</th>
+			<th>State/Provence</th>
+		</tr>
+	</thead>
+	<tbody>
+@foreach (var item in Model)
+{
+		<tr class="linkable"  onclick="window.document.location = '@Url.Action("Details", "Address", new { id = item.Id })'" >
+			<td>
+				@item.Address1
+			</td>
+			<td>
+				@item.City
+			</td>
+			<td>
+				@item.StateOrProvence
+			</td>
+		</tr>
+}
+	</tbody>
+</table>
