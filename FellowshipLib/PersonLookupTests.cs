@@ -22,12 +22,11 @@ namespace FellowshipLib
 
 		[Test]
 		[Category("IntegrationTests")]
-		public void WhenSearchingForAUserByAnInvctalidId_TheUserShouldNotBeNull()
+		public void WhenSearchingForAUserByAnInvalidId_TheUserShouldNotBeNull()
 		{
 			var lookup = new PersonLookup("0123456789");
 			lookup.FindPerson();
-			var person = lookup.Result();
-			person.Should().BeNull();
+			lookup.Succeeded().Should().BeFalse();
 		}
 	}
 }

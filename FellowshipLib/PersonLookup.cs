@@ -9,7 +9,7 @@ namespace FellowshipLib
 	public class PersonLookup : GetRequest<Person>
 	{
 		private const string IdParameterName = "Id";
-		private static readonly string Resource = "People/{" + IdParameterName + "}";
+		private const string Resource = "People/{" + IdParameterName + "}";
 		private string personId;
 
 		public PersonLookup(string personId)

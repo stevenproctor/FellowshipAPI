@@ -59,11 +59,7 @@ namespace FellowshipLib
 		{
 			var query = new PersonSearch("%").AtPage(int.MaxValue);
 			query.Search();
-			var people = query.Result();
-
-			people.Should().NotBeNull();
-			people.PageNumber.Should().Be(0, "PageNumber");
-			people.TotalRecords.Should().Be(0, "TotalRecords");
+			query.Succeeded().Should().BeFalse();
 		}
 
 		[Test]

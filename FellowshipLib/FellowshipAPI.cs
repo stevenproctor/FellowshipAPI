@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using RestSharp;
 using System.Net;
+using FellowshipLib.Extensions;
 
 namespace FellowshipLib
 {
@@ -18,17 +19,7 @@ namespace FellowshipLib
 			AddDefaultParameters(client);
 
 			var response = client.Execute<T>(request);
-			if (response.StatusCode == 0)
-			{
-				Succeeded = false;
-				resultSet = default(T);
-			}
-			else if (response.StatusCode == HttpStatusCode.MethodNotAllowed)
-			{
-				Succeeded = false;
-				resultSet = default(T);
-			}
-			else if (response.StatusCode == HttpStatusCode.NotFound)
+			if (response.StatusCode.IsFailureStatus())
 			{
 				Succeeded = false;
 				resultSet = default(T);
