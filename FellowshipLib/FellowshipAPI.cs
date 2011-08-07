@@ -18,13 +18,32 @@ namespace FellowshipLib
 
 			var response = client.Execute<T>(request);
 			if (response.StatusCode == 0)
+			{
+				Succeeded = false;
 				return default(T);
+			}
+			if (response.StatusCode == HttpStatusCode.MethodNotAllowed)
+			{
+				Succeeded = false;
+				return default(T);
+			}
 			if (response.StatusCode == HttpStatusCode.NotFound)
+			{
+				Succeeded = false;
 				return default(T);
+			}
 			if (response.Content.StartsWith("400"))
+			{
+				Succeeded = false;
 				return new T();
+			}
 			if (response.Data == null)
+			{
+				Succeeded = false;
 				return new T();
+			}
+
+			Succeeded = true;
 			return response.Data;
 		}
 
@@ -32,5 +51,7 @@ namespace FellowshipLib
 		{
 			client.AddDefaultParameter("mode", "Demo", ParameterType.GetOrPost);
 		}
+
+		public bool Succeeded { get; private set; }
 	}
 }

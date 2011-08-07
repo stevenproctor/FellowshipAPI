@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <VisualState xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ShowCheckBoxes="false">
   <TopNode>[0-1000]C:\dev\interviews\fellowshipTech\FellowshipLib\FellowshipLib.csproj</TopNode>
-  <SelectedNode>[0-1017]FellowshipLib</SelectedNode>
+  <SelectedNode>[0-1023]C:\dev\interviews\fellowshipTech\FellowshipLib\bin\Debug\FellowshipLib.dll</SelectedNode>
   <ExcludeCategories>false</ExcludeCategories>
   <Nodes>
     <Node UniqueName="[0-1000]C:\dev\interviews\fellowshipTech\FellowshipLib\FellowshipLib.csproj" Expanded="true" />
-    <Node UniqueName="[0-1016]C:\dev\interviews\fellowshipTech\FellowshipLib\bin\Debug\FellowshipLib.dll" Expanded="true" />
-    <Node UniqueName="[0-1017]FellowshipLib" Expanded="true" />
-    <Node UniqueName="[0-1018]FellowshipLib.Extensions" Expanded="true" />
+    <Node UniqueName="[0-1023]C:\dev\interviews\fellowshipTech\FellowshipLib\bin\Debug\FellowshipLib.dll" Expanded="true" />
+    <Node UniqueName="[0-1024]FellowshipLib" Expanded="true" />
+    <Node UniqueName="[0-1021]FellowshipLib.AddressLookupByPersonTests" Expanded="true" />
+    <Node UniqueName="[0-1025]FellowshipLib.Extensions" Expanded="true" />
     <Node UniqueName="[0-1001]FellowshipLib.Extensions.SafeTrimTests" Expanded="true" />
     <Node UniqueName="[0-1002]FellowshipLib.Extensions.SafeTrimTests.WhenSafeTrimIsCalledOnAString_TheStringShouldBeTrimmed" Expanded="true" />
+    <Node UniqueName="[0-1019]FellowshipLib.HouseholdLookupTests" Expanded="true" />
+    <Node UniqueName="[0-1016]FellowshipLib.PersonLookupTests" Expanded="true" />
     <Node UniqueName="[0-1010]FellowshipLib.PersonSearchTests" Expanded="true" />
   </Nodes>
 </VisualState>

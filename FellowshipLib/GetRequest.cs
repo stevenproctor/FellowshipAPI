@@ -9,6 +9,7 @@ namespace FellowshipLib
 	public abstract class GetRequest<T> where T : new()
 	{
 		private T results;
+		private bool succeeded;
 
 		protected void Get()
 		{
@@ -18,8 +19,13 @@ namespace FellowshipLib
 			AddParameters(request);
 			var apiRequest = new FellowshipAPI();
 			results = apiRequest.SendRequest<T>(request);
-			//success = apiRequest.Success;
+			succeeded = apiRequest.Succeeded;
 			//messages = apiRequest.GetMessages();
+		}
+
+		public bool Succeeded()
+		{
+			return succeeded;
 		}
 
 		public T Result()
